@@ -1,0 +1,21 @@
+Este arquivo serve para explicar como executar o experimento; 
+
+E nesse experimento iremos realizar algumas analises que sao: 
+- Com vetores de numeros em ordem crescente; 
+- Com vetores de numeros em ordem decrescente;
+- Com vetores de numeros inteiros em ordem aleatoria; 
+- Com vetores de numeros inteiros de tamanhos 50, 500, 5000, 50000;
+
+Observacao: Através dos tamanhos dos vetores, e dos tempos de processamento,
+você deve criar gráficos onde o ponto x é o tamanho do vetor, e o ponto
+y é o tempo necessário para ordenar o vetor de tamanho x.
+
+Nao esquecer de: Plotar um caso de mesmo tamanho para os dois algoritmos para comparar e de fazer o relatorio;
+
+O relatorio tem que ter: 
+- Resumo;
+- Introducao; 
+- Metodologia;
+- Resultados;
+- Conclusao;
+- Referencias(se houver);
