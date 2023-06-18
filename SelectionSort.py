@@ -1,33 +1,24 @@
-# Algorithm Design and Analysis Work (About Sorting Algorithms);
+import random
 
-# Sorting Algorithms -> These are a set of instructions that take an array or list as input and arrange the items in a specific order;
-
-# In this program we are using the sorting algorithm 'Selection-Sort';
-
-
-amount = int(input('Enter how many indexes you want: '))
-list = []
-
-while len(list) < amount:
-    add = int(input('Enter a number: '))
-    list.append(add)
+def selection_sort(arr):
+    n = len(arr)
     
-print(list)
-
-# Note: row = i and column = j 
-
-for i in range(len(list)):
-    smaller = i
-
-    for j in range(i + 1 ,len(list)):
-        if list[j] <= list[smaller]:
-                smaller = j
-
-    if list[i] != list[smaller]:
-            aux = list[i]
-            list[i] = list[smaller]
-            list[smaller] = aux
-
-print(list)
+    for i in range(n-1):
+        min_idx = i
+        
+        for j in range(i+1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
     
+    return arr
 
+# Uso 
+tamanho = int(input("Digite o tamanho do vetor: "))
+vetor = [random.randint(1, 100) for _ in range(tamanho)]
+
+print("Vetor original:", vetor)
+
+resultado = selection_sort(vetor)
+print("Vetor ordenado:", resultado)
