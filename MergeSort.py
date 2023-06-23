@@ -45,11 +45,14 @@ def measure_execution_time(sort_func, array):
     time = timeit.timeit(lambda: sort_func(array), number=1)
     return time
 
-def plot_graph(x, y, title):
-    plt.plot(x, y, marker='o')
-    plt.title(title)
+def plot_graph(x, y1, y2, y3):
+    plt.plot(x, y1, marker='o', color='red', label='Crescente')
+    plt.plot(x, y2, marker='o', color='blue', label='Decrescente')
+    plt.plot(x, y3, marker='o', color='green', label='Aleatório')
+    plt.title("Análise de tempo de execução dos algoritmos de ordenação")
     plt.xlabel("Tamanho do vetor")
     plt.ylabel("Tempo (segundos)")
+    plt.legend()
     plt.show()
 
 def print_execution_time(time, sort_func_name, size):
@@ -64,17 +67,32 @@ def run_sorting_analysis(array_sizes):
 
     analysis_results = {}  # Dicionário para armazenar os tempos de execução
 
-    for title, sort_func in sort_functions.items():
-        execution_times = []
-        for size in array_sizes:
-            array = generate_random_array(size) if title == "Aleatório" else list(range(size))
-            time = measure_execution_time(sort_func, array)
-            execution_times.append(time)
-            print_execution_time(time, sort_func.__name__, size)
+    merge_times = []
+    reverse_times = []
+    random_times = []
 
-        analysis_results[title] = execution_times  # Armazena os tempos de execução correspondentes
+    for size in array_sizes:
+        array = list(range(size))
+        reverse_array = list(range(size, 0, -1))
+        random_array = generate_random_array(size)
 
-        plot_graph(array_sizes, execution_times, f"Análise de tempo - {title}")
+        merge_time = measure_execution_time(merge_sort, array)
+        reverse_time = measure_execution_time(merge_sort, reverse_array)
+        random_time = measure_execution_time(merge_sort, random_array)
+
+        merge_times.append(merge_time)
+        reverse_times.append(reverse_time)
+        random_times.append(random_time)
+
+        print_execution_time(merge_time, merge_sort.__name__, size)
+        print_execution_time(reverse_time, merge_sort.__name__, size)
+        print_execution_time(random_time, merge_sort.__name__, size)
+
+    analysis_results["Crescente"] = merge_times
+    analysis_results["Decrescente"] = reverse_times
+    analysis_results["Aleatório"] = random_times
+
+    plot_graph(array_sizes, merge_times, reverse_times, random_times)
 
     # Imprime a análise correspondente aos tempos de execução
     for title, execution_times in analysis_results.items():

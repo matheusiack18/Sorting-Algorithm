@@ -35,7 +35,6 @@ def merge(left, right):
     while right_index < len(right):
         merged.append(right[right_index])
         right_index += 1
-
     return merged
 
 def selection_sort(arr):
