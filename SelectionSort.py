@@ -75,11 +75,12 @@ def run_sorting_analysis(array_sizes):
         print(f"\nAnálise correspondente a {title}:")
         min_time = min(execution_times)
         max_time = max(execution_times)
-        avg_time = sum(execution_times) / len(execution_times)
+
         print(f"Mínimo: {min_time:.6f} segundos")
         print(f"Máximo: {max_time:.6f} segundos")
-        print(f"Média: {avg_time:.6f} segundos")
 
+        
 
+print("\n")
 array_sizes = [50, 500, 5000, 50000]
 run_sorting_analysis(array_sizes)
