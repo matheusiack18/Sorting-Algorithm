@@ -7,36 +7,36 @@ def merge_sort(arr):
     if len(arr) <= 1:
         return arr
 
-    mid = len(arr) // 2
-    left = arr[:mid]
-    right = arr[mid:]
+    meio = len(arr) // 2
+    esq = arr[:meio]
+    direi = arr[meio:]
 
-    left = merge_sort(left)
-    right = merge_sort(right)
+    esq = merge_sort(esq)
+    direi = merge_sort(direi)
 
-    return merge(left, right)
+    return merge(esq, direi)
 
 # A funcao a seguir e responsavel por mesclar as duas sublistas ordenadas em uma unica lista ordenada 
-def merge(left, right):
+def merge(esq, direi):
     merged = []
-    left_index = 0
-    right_index = 0
+    esq_index = 0
+    direi_index = 0
 
-    while left_index < len(left) and right_index < len(right):
-        if left[left_index] <= right[right_index]:
-            merged.append(left[left_index])
-            left_index += 1
+    while esq_index < len(esq) and direi_index < len(direi):
+        if esq[esq_index] <= direi[direi_index]:
+            merged.append(esq[esq_index])
+            esq_index += 1
         else:
-            merged.append(right[right_index])
-            right_index += 1
+            merged.append(direi[direi_index])
+            direi_index += 1
 
-    while left_index < len(left):
-        merged.append(left[left_index])
-        left_index += 1
+    while esq_index < len(esq):
+        merged.append(esq[esq_index])
+        esq_index += 1
 
-    while right_index < len(right):
-        merged.append(right[right_index])
-        right_index += 1
+    while direi_index < len(direi):
+        merged.append(direi[direi_index])
+        direi_index += 1
 
     return merged
 
@@ -51,9 +51,9 @@ def measure_execution_time(sort_func, array):
 
 # A partir dessa linha e a funcao que plota o grafico com os tempos de execucoes para determinados tamanhos de vetores;
 def plot_graph(x, y1, y2, y3):
-    plt.plot(x, y1, marker='o', color='red', label='Crescente')
-    plt.plot(x, y2, marker='o', color='blue', label='Decrescente')
-    plt.plot(x, y3, marker='o', color='green', label='Aleatório')
+    plt.plot(x, y1, marker='x', color='red', label='Crescente')
+    plt.plot(x, y2, marker='x', color='blue', label='Decrescente')
+    plt.plot(x, y3, marker='x', color='green', label='Aleatório')
     plt.title("Análise de tempo de execução dos algoritmos de ordenação")
     plt.xlabel("Tamanho do vetor")
     plt.ylabel("Tempo (segundos)")
