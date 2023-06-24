@@ -1,21 +1,19 @@
-Este arquivo serve para explicar como executar o experimento; 
+Para executar o código, siga as etapas abaixo:
 
-E nesse experimento iremos realizar algumas analises que sao: 
-- Com vetores de numeros em ordem crescente; 
-- Com vetores de numeros em ordem decrescente;
-- Com vetores de numeros inteiros em ordem aleatoria; 
-- Com vetores de numeros inteiros de tamanhos 50, 500, 5000, 50000;
+1- Verifique se o Python está instalado no seu sistema. Abra um terminal ou prompt de comando e digite o seguinte comando "python --version". Isso exibirá a versão do Python instalada.
+Se o Python não estiver instalado, você precisará baixar e instalar a versão adequada para o seu sistema a partir do site oficial do Python: https://www.python.org.
 
-Observacao: Através dos tamanhos dos vetores, e dos tempos de processamento,
-você deve criar gráficos onde o ponto x é o tamanho do vetor, e o ponto
-y é o tempo necessário para ordenar o vetor de tamanho x.
+Após instalar o Python, verifique se as bibliotecas necessárias estão instaladas. No terminal ou prompt de comando,
+execute os seguintes comandos para instalar as bibliotecas random, timeit e matplotlib: "pip install <nome_da_biblioteca>", por exemplo: pip install random
 
-Nao esquecer de: Plotar um caso de mesmo tamanho para os dois algoritmos para comparar e de fazer o relatorio;
+2- Caso esteja em uma IDE online abra o arquivo e execute o programa apertando no botao de execucao que tem um icone de 'play' e os resultados vao aparecer no 
+terminal e abrir uma janela sozinho plotando o grafico de comparacao depois de um tempo; 
 
-O relatorio tem que ter: 
-- Resumo;
-- Introducao; 
-- Metodologia;
-- Resultados;
-- Conclusao;
-- Referencias(se houver);
+Caso esteja em um terminal Linux/Windows abra um editor de texto e salve como arquiivo .py, em seguida abra um terminal e navegue ate o diretorio do arquivo 
+em que foi salvo como .py; Para executar o codigo digite python <nome_do_arquivo.py> e para isso o python tem que estar instalado no sistema; 
+
+3 - Aguarde o programa ser executado. Os tempos de execução para cada tamanho de vetor e caso de ordem serão exibidos no terminal, 
+e um gráfico comparativo será aberto automaticamente em uma janela separada após algum tempo.
+
+*Observacao: Certifique-se de ter o Python e as bibliotecas necessárias instaladas corretamente antes de executar o programa. O processo pode variar
+um pouco dependendo do sistema operacional e da configuração do ambiente Python.
